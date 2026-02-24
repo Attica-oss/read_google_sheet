@@ -1,5 +1,6 @@
 """Google Sheet fetching and transformation."""
 
+import re
 from dataclasses import dataclass
 from io import StringIO
 
@@ -31,6 +32,24 @@ class GoogleSheetConfig:
         if self.timeout <= 0:
             return Err(exceptions.ConfigurationError("Timeout must be positive"))
         return Ok(True)
+
+    @classmethod
+    def from_url(
+        cls,
+        url: str,
+        sheet_name: str,
+        timeout: int = 10,
+    ) -> Result["GoogleSheetConfig", Exception]:
+        """Create a GoogleSheetConfig from a full Google Sheets URL."""
+        match re.search(r"/spreadsheets/d/([a-zA-Z0-9_-]{44})", url):
+            case None:
+                return Err(
+                    exceptions.ConfigurationError(
+                        f"Could not extract a valid sheet ID from URL: '{url}'"
+                    )
+                )
+            case m:
+                return Ok(cls(sheet_id=m.group(1), sheet_name=sheet_name, timeout=timeout))
 
     def create_url(self) -> Result[str, Exception]:
         """Create URL for Google Sheets CSV export."""

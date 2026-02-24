@@ -6,7 +6,20 @@
   "cells": [
     {
       "id": "setup",
-      "code_hash": "8cb84f23ea1f0a566cc72d4655db0c20",
+      "code_hash": "93ba1afa278cb6dace186e9af7370b2e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "b2d6058b763af29ba3c9a5f3b271505d",
       "outputs": [
         {
           "type": "data",
@@ -19,46 +32,7 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "9296292875a33c89aa6749fd45db29e2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "mDqM",
-      "code_hash": "264e673121305b6f3e2ae3dafadf6b84",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "xJaT",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ogTi",
-      "code_hash": "b457c62a78cdc1a24526e217b0c4f094",
+      "code_hash": "70fa022a0047a046c1d50a5953ae3330",
       "outputs": [
         {
           "type": "data",
@@ -71,6 +45,32 @@
     },
     {
       "id": "bkHC",
+      "code_hash": "b457c62a78cdc1a24526e217b0c4f094",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "b4a88417b3d0170d754c647c30b7216a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='c36a0512-8be2-d6b4-6ae4-dd29d96a97fd'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-07&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;AMIRANTE&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;IZARO&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:5.236,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Wed&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-17&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;GEVRED&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.721,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Sat&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-30&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:7.776,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Fri&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-01&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.527,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-02&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:8.244,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;4.644&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-02&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:8.088,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;8.088&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:6,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;DOLOMIEU&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.195,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Dry&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[14:23, 03/02/2026] Rupert Suzette: Please send tipping truck to collect by-catch @ the front of Dolomieu. To deliver to CCCS on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:7,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:24.639,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;14.857&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[11:14, 03/02/2026] Rupert Suzette: IPHS truck to collect by-catch from following vessels and deliver to CCCS&#92;&#92;n&#92;&#92;n- Pendruc on behalf of ICC&#92;&#92;n- Azkorri on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:8,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:10.021,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[11:14, 03/02/2026] Rupert Suzette: IPHS truck to collect by-catch from following vessels and deliver to CCCS&#92;&#92;n&#92;&#92;n- Pendruc on behalf of ICC&#92;&#92;n- Azkorri on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:9,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-04&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:14.648,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;14.648&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Wed&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[15:26, 04/02/2026] Rupert Suzette: Tipping truck to collect by-catch from Azkorri and deliver to CCCS on behalf of OB&#92;&quot;}]&quot;' data-total-rows='34' data-total-columns='11' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;date&quot;,[&quot;date&quot;,&quot;date&quot;]],[&quot;movement_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;customer&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;origin&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;vessel&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;service&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;total_tonnage&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;overtime_tonnage&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;storage_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;day&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;whats_app_confirmation&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-freeze-columns-left='[&quot;date&quot;]' data-has-stable-row-id='true' data-lazy='false' data-preload='false' data-download-file-name='&quot;download&quot;'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
       "code_hash": null,
       "outputs": [
         {
@@ -83,22 +83,29 @@
       "console": []
     },
     {
-      "id": "mkZv",
-      "code_hash": "b4a88417b3d0170d754c647c30b7216a",
+      "id": "lEQa",
+      "code_hash": null,
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='ogTi-0' random-id='8254610c-3847-1e37-4e79-d23565f54175'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;_marimo_row_id&#92;&quot;:0,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-07&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;AMIRANTE&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;IZARO&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:5.236,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Wed&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:1,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-17&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;GEVRED&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.721,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Sat&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:2,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-01-30&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:7.776,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Fri&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:3,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-01&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.527,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:4,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-02&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:8.244,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;4.644&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:5,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-02&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:8.088,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;8.088&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;PH&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:6,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;DOLOMIEU&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:2.195,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Dry&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[14:23, 03/02/2026] Rupert Suzette: Please send tipping truck to collect by-catch @ the front of Dolomieu. To deliver to CCCS on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:7,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:24.639,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;14.857&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[11:14, 03/02/2026] Rupert Suzette: IPHS truck to collect by-catch from following vessels and deliver to CCCS&#92;&#92;n&#92;&#92;n- Pendruc on behalf of ICC&#92;&#92;n- Azkorri on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:8,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-03&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;ISLAND CATCH&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PENDRUC&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:10.021,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;0&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Tue&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[11:14, 03/02/2026] Rupert Suzette: IPHS truck to collect by-catch from following vessels and deliver to CCCS&#92;&#92;n&#92;&#92;n- Pendruc on behalf of ICC&#92;&#92;n- Azkorri on behalf of OB&#92;&quot;},{&#92;&quot;_marimo_row_id&#92;&quot;:9,&#92;&quot;date&#92;&quot;:&#92;&quot;2026-02-04&#92;&quot;,&#92;&quot;movement_type&#92;&quot;:&#92;&quot;IN&#92;&quot;,&#92;&quot;customer&#92;&quot;:&#92;&quot;OCEAN BASKET&#92;&quot;,&#92;&quot;origin&#92;&quot;:&#92;&quot;Vessel&#92;&quot;,&#92;&quot;vessel&#92;&quot;:&#92;&quot;PLAYA DE AZKORRI&#92;&quot;,&#92;&quot;service&#92;&quot;:&#92;&quot;Transfer of by-catch&#92;&quot;,&#92;&quot;total_tonnage&#92;&quot;:14.648,&#92;&quot;overtime_tonnage&#92;&quot;:&#92;&quot;14.648&#92;&quot;,&#92;&quot;storage_type&#92;&quot;:&#92;&quot;Brine&#92;&quot;,&#92;&quot;day&#92;&quot;:&#92;&quot;Wed&#92;&quot;,&#92;&quot;whats_app_confirmation&#92;&quot;:&#92;&quot;[15:26, 04/02/2026] Rupert Suzette: Tipping truck to collect by-catch from Azkorri and deliver to CCCS on behalf of OB&#92;&quot;}]&quot;' data-total-rows='34' data-total-columns='11' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;date&quot;,[&quot;date&quot;,&quot;date&quot;]],[&quot;movement_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;customer&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;origin&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;vessel&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;service&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;total_tonnage&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;overtime_tonnage&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;storage_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;day&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;whats_app_confirmation&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-selection='&quot;multi&quot;' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-freeze-columns-left='[&quot;date&quot;]' data-has-stable-row-id='true' data-lazy='false' data-preload='false' data-download-file-name='&quot;download&quot;'></marimo-table></marimo-ui-element>"
+            "text/plain": ""
           }
         }
       ],
       "console": []
     },
     {
-      "id": "rtXP",
+      "id": "Xref",
       "code_hash": null,
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     }
   ]

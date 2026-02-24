@@ -90,6 +90,7 @@ class SheetYearFilter:
                 available_years = (
                     data.select(pl.col(date_column).dt.year().unique())
                     .collect()
+                    .to_frame()
                     .to_series()
                     .to_list()
                 )
