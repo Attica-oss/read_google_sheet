@@ -4,16 +4,20 @@ __generated_with = "0.20.1"
 app = marimo.App(width="medium")
 
 with app.setup:
-    import polars as pl
-    import marimo as mo
     from functools import partial
-    from read_google_sheet import load_google_sheet
-    from polars_result import Ok,Err,Result,ValidationError
+
+    import marimo as mo
+    import polars as pl
+    from polars_result import Err, Ok, Result, ValidationError
+
+    from read_google_sheet import read_google_sheet
 
 
 @app.cell
 def _():
-    by_catch_transfer = load_google_sheet(sheet_id="1VbfiiWsp8yxs6KSR1CXpw1S_35tYlWV8UjjWah9Afpw",sheet_name="IPHSBycatchTransfer")
+    by_catch_transfer = read_google_sheet(
+        sheet_id="1VbfiiWsp8yxs6KSR1CXpw1S_35tYlWV8UjjWah9Afpw", sheet_name="IPHSBycatchTransfer"
+    )
     return (by_catch_transfer,)
 
 
@@ -43,9 +47,7 @@ class SheetYearFilter:
         """Filter and return a marimo table or error callout."""
         match self.filter(selected_year):
             case Ok(df):
-                return mo.ui.table(
-                    df.collect(), freeze_columns_left=[self.date_column]
-                )
+                return mo.ui.table(df.collect(), freeze_columns_left=[self.date_column])
             case Err(e):
                 return mo.callout(mo.md(f"**Error:** {e}"), kind="danger")
 
@@ -71,8 +73,7 @@ class SheetYearFilter:
             case _:
                 return Err(
                     ValidationError(
-                        f"selected_year must be int or str, "
-                        f"got {type(selected_year).__name__}"
+                        f"selected_year must be int or str, got {type(selected_year).__name__}"
                     )
                 )
 

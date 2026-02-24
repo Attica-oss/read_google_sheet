@@ -8,7 +8,7 @@ from polars_result import Result
 from read_google_sheet.integrations.fetcher import GoogleSheetConfig
 
 
-def load_google_sheet(
+def read_google_sheet(
     sheet_id: str,
     sheet_name: str,
     as_dataframe: bool = False,

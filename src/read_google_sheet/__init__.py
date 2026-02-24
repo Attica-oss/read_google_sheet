@@ -12,7 +12,7 @@ from read_google_sheet.core.exceptions import (
     ValidationError,
 )
 from read_google_sheet.integrations.fetcher import GoogleSheetConfig
-from read_google_sheet.integrations.loader import load_google_sheet
+from read_google_sheet.integrations.loader import read_google_sheet
 
 __version__ = "0.1.0"
 
@@ -26,5 +26,5 @@ __all__ = [
     "SheetFetchError",
     "SheetTransformError",
     "ValidationError",
-    "load_google_sheet",
+    "read_google_sheet",
 ]

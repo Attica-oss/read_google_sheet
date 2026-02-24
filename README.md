@@ -12,9 +12,8 @@ Load public Google Sheets directly into Polars `LazyFrame` or `DataFrame` — wi
 
 - 📊 **Polars-native** — returns `LazyFrame` by default, `DataFrame` on request
 - 🚂 **Railway-oriented** — every operation returns `Result[T, Exception]`, never raises
-- 🔑 **Config-driven** — store sheet IDs and names in `.env`, load by name
-- ✅ **Validated types** — `SheetId` enforces the 44-character Google Sheet ID format at construction
-- 📦 **Minimal dependencies** — Polars, requests, python-dotenv, polars-result
+- ✅ **Validated** — sheet ID and name are validated before any network request
+- 📦 **Minimal dependencies** — Polars, requests, polars-result
 
 ## Installation
 
@@ -28,13 +27,14 @@ pip install read-google-sheet
 
 ## Quick Start
 
-### Load a sheet directly
-
 ```python
 from polars_result import Ok, Err
-from read_google_sheet import load_google_sheet
+from read_google_sheet import read_google_sheet
 
-result = load_google_sheet("sales")
+result = read_google_sheet(
+    sheet_id="1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms",
+    sheet_name="Sheet1",
+)
 
 match result:
     case Ok(lf):
@@ -43,72 +43,25 @@ match result:
         print(f"Failed: {e}")
 ```
 
-### Configure sheets in `.env`
-
-Store your sheet configurations once and refer to them by name:
-
-```bash
-# .env
-SALES_ID=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms
-SALES_NAME=Sheet1
-
-INVENTORY_ID=2CyiNWt1YSB6oGNLlBeCaijhnVrquumct85PhWF3vqnt
-INVENTORY_NAME=Stock
-```
-
-```python
-from read_google_sheet import load_google_sheet, GoogleSheetsLoader
-
-# Load as LazyFrame (default)
-result = load_google_sheet("sales")
-
-# Load as collected DataFrame
-result = load_google_sheet("inventory", as_dataframe=True)
-
-# List all configured sheets
-sheets = GoogleSheetsLoader.list_available_sheets()
-```
-
-### Save a new sheet config programmatically
-
-```python
-from polars_result import Ok, Err
-from read_google_sheet import GoogleSheetsLoader
-
-result = GoogleSheetsLoader.save_sheet_config(
-    config_name="vessels",
-    sheet_id="1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms",
-    sheet_name="Berthing",
-)
-
-match result:
-    case Ok(msg):
-        print(msg)   # "Sheet config 'vessels' saved to .env"
-    case Err(e):
-        print(f"Failed: {e}")
-```
-
 ---
 
 ## API Reference
 
-### `load_google_sheet`
+### `read_google_sheet`
 
 ```python
-def load_google_sheet(
-    config_name: str,
-    env_file: str = ".env",
+def read_google_sheet(
+    sheet_id: str,
+    sheet_name: str,
     as_dataframe: bool = False,
     parse_dates: bool = True,
 ) -> Result[pl.LazyFrame | pl.DataFrame, Exception]
 ```
 
-Convenience function for scripts and notebooks. Reads the sheet config from `.env` and returns the data.
-
 | Parameter | Description |
 |---|---|
-| `config_name` | Name of the config entry (e.g. `"sales"` matches `SALES_ID` / `SALES_NAME`) |
-| `env_file` | Path to `.env` file (default: `".env"`) |
+| `sheet_id` | 44-character Google Sheet ID from the sheet URL |
+| `sheet_name` | Tab name within the spreadsheet |
 | `as_dataframe` | Return a collected `DataFrame` instead of a `LazyFrame` |
 | `parse_dates` | Attempt to parse date columns automatically |
 
@@ -116,7 +69,7 @@ Convenience function for scripts and notebooks. Reads the sheet config from `.en
 
 ### `GoogleSheetConfig`
 
-Low-level dataclass for direct sheet access without `.env`:
+Low-level dataclass for direct access and step-by-step control:
 
 ```python
 from read_google_sheet import GoogleSheetConfig
@@ -135,57 +88,16 @@ data   = config.fetch_data()      # Result[StringIO, Exception]
 
 ---
 
-### `GoogleSheetsLoader`
-
-High-level interface for `.env`-based operations:
-
-```python
-from read_google_sheet import GoogleSheetsLoader
-
-# Load a sheet
-result = GoogleSheetsLoader.load_sheet("sales", as_dataframe=True)
-
-# Create a config object from .env without loading data
-config = GoogleSheetsLoader.from_env("sales")
-
-# List all sheets in .env
-sheets = GoogleSheetsLoader.list_available_sheets()
-
-# Save a new config entry
-result = GoogleSheetsLoader.save_sheet_config("sales", sheet_id, sheet_name)
-```
-
----
-
-### `SheetId`
-
-A validated `str` subclass that enforces the Google Sheet ID format — 44 alphanumeric characters, hyphens, and underscores:
-
-```python
-from read_google_sheet import SheetId
-
-# Validate and return Result
-result = SheetId.validate("1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms")  # Ok(SheetId(...))
-result = SheetId.validate("bad-id")                                           # Err(ValueError(...))
-
-# Quick boolean check
-SheetId.is_valid("1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms")  # True
-```
-
----
-
 ### Exceptions
 
 All exceptions inherit from `GoogleSheetError`:
 
 | Exception | Raised when |
 |---|---|
-| `ConfigurationError` | `.env` missing, malformed, or sheet config not found |
-| `InvalidSheetIDError` | Sheet ID fails the 44-character validation |
+| `ConfigurationError` | Invalid sheet ID or empty sheet name |
 | `SheetFetchError` | HTTP request fails or returns a non-200 status |
 | `NetworkError` | Connection error or timeout |
 | `SheetTransformError` | CSV parsing or LazyFrame collection fails |
-| `EnvError` | Reading or writing the `.env` file fails |
 | `ValidationError` | General validation failure |
 
 ---
@@ -195,9 +107,9 @@ All exceptions inherit from `GoogleSheetError`:
 ### Pattern 1: Match on result
 
 ```python
-from read_google_sheet import load_google_sheet, ConfigurationError, NetworkError
+from read_google_sheet import read_google_sheet, ConfigurationError, NetworkError
 
-match load_google_sheet("sales"):
+match read_google_sheet(sheet_id="...", sheet_name="Sheet1"):
     case Ok(lf):
         df = lf.collect()
     case Err(ConfigurationError() as e):
@@ -213,10 +125,10 @@ match load_google_sheet("sales"):
 ```python
 import polars as pl
 from polars_result import Ok
-from read_google_sheet import load_google_sheet
+from read_google_sheet import read_google_sheet
 
 result = (
-    load_google_sheet("sales")
+    read_google_sheet(sheet_id="...", sheet_name="Sheet1")
     .map(lambda lf: lf.filter(pl.col("amount") > 0))
     .map(lambda lf: lf.select("vessel", "service", "amount"))
     .and_then(lambda lf: Ok(lf.collect()))
@@ -227,8 +139,8 @@ result = (
 
 ```python
 result = (
-    load_google_sheet("sales_live")
-    .or_else(lambda _: load_google_sheet("sales_backup"))
+    read_google_sheet(sheet_id="...", sheet_name="live")
+    .or_else(lambda _: read_google_sheet(sheet_id="...", sheet_name="backup"))
     .unwrap_or(pl.LazyFrame())
 )
 ```
@@ -236,7 +148,7 @@ result = (
 ### Pattern 4: Unwrap with default
 
 ```python
-lf = load_google_sheet("sales").unwrap_or(pl.LazyFrame())
+lf = read_google_sheet(sheet_id="...", sheet_name="Sheet1").unwrap_or(pl.LazyFrame())
 ```
 
 ---
@@ -246,9 +158,13 @@ lf = load_google_sheet("sales").unwrap_or(pl.LazyFrame())
 ```python
 import marimo as mo
 from polars_result import Ok, Err
-from read_google_sheet import load_google_sheet
+from read_google_sheet import read_google_sheet
 
-result = load_google_sheet("sales", as_dataframe=True)
+result = read_google_sheet(
+    sheet_id="1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms",
+    sheet_name="Sheet1",
+    as_dataframe=True,
+)
 
 match result:
     case Ok(df):
