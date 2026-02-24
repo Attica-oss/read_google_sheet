@@ -6,8 +6,8 @@ from io import StringIO
 import polars as pl
 import requests
 from polars_result import Err, Ok, Result
-from src.read_google_sheet.core import exceptions
-from src.read_google_sheet.integrations.types import SheetId
+
+from read_google_sheet.core import exceptions
 
 
 @dataclass
@@ -24,10 +24,10 @@ class GoogleSheetConfig:
             raise exceptions.ConfigurationError(str(validation_result.unwrap_err()))
 
     def _validate(self) -> Result[bool, Exception]:
-        if not SheetId.is_valid(self.sheet_id):
-            return Err(exceptions.ConfigurationError(f"Invalid sheet ID: {self.sheet_id}"))
+        if not isinstance(self.sheet_id, str) or not self.sheet_id.strip():
+            return Err(exceptions.ConfigurationError("sheet_id must be a non-empty string"))
         if not isinstance(self.sheet_name, str) or not self.sheet_name.strip():
-            return Err(exceptions.ConfigurationError("Sheet name must be a non-empty string"))
+            return Err(exceptions.ConfigurationError("sheet_name must be a non-empty string"))
         if self.timeout <= 0:
             return Err(exceptions.ConfigurationError("Timeout must be positive"))
         return Ok(True)

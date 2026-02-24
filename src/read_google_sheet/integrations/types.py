@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from polars_result import Err, Ok, Result
 
-# from src.read_google_sheet.core import exceptions
+# from read_google_sheet.core import exceptions
 
 # ============================================================================
 # Type Aliases

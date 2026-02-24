@@ -19,10 +19,6 @@ class SheetTransformError(GoogleSheetError):
     """Raised when transforming sheet data fails"""
 
 
-class EnvError(GoogleSheetError):
-    """Raised when environment operations fail"""
-
-
 class ConfigurationError(GoogleSheetError):
     """Raised when configuration is invalid"""
 
