@@ -4,8 +4,6 @@ from dataclasses import dataclass
 
 from polars_result import Err, Ok, Result
 
-# from read_google_sheet.core import exceptions
-
 # ============================================================================
 # Type Aliases
 # ============================================================================
@@ -27,19 +25,19 @@ class SheetId(str):
 
     def __new__(cls, value: str) -> "SheetId":
         if not isinstance(value, str):
-            raise TypeError(f"SheetId must be str, got {type(value)}")
+            raise TypeError(f"Google Sheet ID must be str, got {type(value)}")
 
         value = value.strip()
 
         if not value:
-            raise ValueError("SheetId cannot be empty")
+            raise ValueError("Google Sheet ID cannot be empty")
 
         if len(value) != 44:
-            raise ValueError(f"SheetId must be 44 characters, got {len(value)}")
+            raise ValueError(f"Google Sheet ID must be 44 characters, got {len(value)}")
 
         if not all(c.isalnum() or c in "-_" for c in value):
             raise ValueError(
-                "SheetId can only contain alphanumeric characters, hyphens, or underscores"
+                "Google Sheet ID can only contain alphanumeric characters, hyphens, or underscores"
             )
 
         return str.__new__(cls, value)
@@ -48,20 +46,21 @@ class SheetId(str):
     def validate(cls, value: str) -> Result["SheetId", Exception]:
         """Validate and create SheetId, returning Result."""
         if not isinstance(value, str):
-            return Err(TypeError(f"SheetId must be str, got {type(value)}"))
+            return Err(TypeError(f"Google Sheet ID must be str, got {type(value)}"))
 
         value = value.strip()
 
         if not value:
-            return Err(ValueError("SheetId cannot be empty"))
+            return Err(ValueError("Google Sheet ID cannot be empty"))
 
         if len(value) != 44:
-            return Err(ValueError(f"SheetId must be 44 characters, got {len(value)}"))
+            return Err(ValueError(f"Google Sheet ID must be 44 characters, got {len(value)}"))
 
         if not all(c.isalnum() or c in "-_" for c in value):
             return Err(
                 ValueError(
-                    "SheetId can only contain alphanumeric characters, hyphens, or underscores"
+                    """Google Sheet ID can only contain
+                    alphanumeric characters, hyphens, or underscores"""
                 )
             )
 

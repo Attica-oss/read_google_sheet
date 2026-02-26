@@ -4,8 +4,8 @@ import re
 from dataclasses import dataclass
 from io import StringIO
 
+import httpx
 import polars as pl
-import requests
 from polars_result import Err, Ok, Result
 
 from read_google_sheet.core import exceptions
@@ -62,20 +62,20 @@ class GoogleSheetConfig:
 
         def make_request(url: str) -> Result[StringIO, Exception]:
             try:
-                response = requests.get(url, timeout=self.timeout)
+                response = httpx.get(url, timeout=self.timeout)
                 if response.status_code == 200:
                     return Ok(StringIO(response.text))
                 return Err(
                     exceptions.SheetFetchError(
                         f"Failed to fetch data. Status: {response.status_code}, "
-                        f"Reason: {response.reason}"
+                        f"Reason: {response.reason_phrase}"
                     )
                 )
-            except requests.exceptions.Timeout:
+            except httpx.TimeoutException:
                 return Err(
                     exceptions.SheetFetchError(f"Request timed out after {self.timeout} seconds")
                 )
-            except requests.exceptions.RequestException as e:
+            except httpx.RequestError as e:
                 return Err(exceptions.NetworkError(f"Network error: {e}"))
 
         return self.create_url().and_then(make_request)

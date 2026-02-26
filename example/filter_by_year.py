@@ -1,29 +1,14 @@
-import marimo
+"""Filter a Google Sheet LazyFrame by year and display"""
 
-__generated_with = "0.20.1"
-app = marimo.App(width="medium")
+from functools import partial
 
-with app.setup:
-    from functools import partial
-
-    import marimo as mo
-    import polars as pl
-    from polars_result import Err, Ok, Result, ValidationError
-
-    from read_google_sheet import read_google_sheet
+import polars as pl
+from polars_result import Err, Ok, Result
+from src.read_google_sheet import ValidationError
 
 
-@app.cell
-def _():
-    by_catch_transfer = read_google_sheet(
-        sheet_id="1VbfiiWsp8yxs6KSR1CXpw1S_35tYlWV8UjjWah9Afpw", sheet_name="IPHSBycatchTransfer"
-    )
-    return (by_catch_transfer,)
-
-
-@app.class_definition
-class SheetYearFilter:
-    """Filter a Google Sheet LazyFrame by year and display in marimo."""
+class FilterByYear:
+    """Filter a Google Sheet LazyFrame by year and display"""
 
     def __init__(
         self,
@@ -43,13 +28,13 @@ class SheetYearFilter:
             )
         )
 
-    def display(self, selected_year: int | str) -> mo.ui.table | mo.Html:
+    def display(self, selected_year: int | str) -> pl.DataFrame:
         """Filter and return a marimo table or error callout."""
         match self.filter(selected_year):
             case Ok(df):
-                return mo.ui.table(df.collect(), freeze_columns_left=[self.date_column])
+                return df.unwrap()
             case Err(e):
-                return mo.callout(mo.md(f"**Error:** {e}"), kind="danger")
+                return pl.DataFrame(f"**Error:** {e}")
 
     @staticmethod
     def _filter_year(
@@ -57,6 +42,7 @@ class SheetYearFilter:
         selected_year: int | str,
         date_column: str,
     ) -> Result[pl.LazyFrame, Exception]:
+        """Filter the data to a specific year."""
         match selected_year:
             case str():
                 try:
@@ -87,10 +73,11 @@ class SheetYearFilter:
                 )
             case _:
                 filtered = data.filter(pl.col(date_column).dt.year().eq(selected_year))
+                assert isinstance(data, pl.DataFrame)
                 available_years = (
                     data.select(pl.col(date_column).dt.year().unique())
                     .collect()
-                    .to_frame()
+                    # .to_frame()
                     .to_series()
                     .to_list()
                 )
@@ -104,34 +91,3 @@ class SheetYearFilter:
                         )
                     case True:
                         return Ok(filtered)
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _(by_catch_transfer):
-    result = SheetYearFilter(data=by_catch_transfer).display("2026")
-    return (result,)
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _(result):
-    result
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-if __name__ == "__main__":
-    app.run()
